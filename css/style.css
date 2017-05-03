@@ -237,6 +237,11 @@ video::-webkit-media-controls {
 
 /*---start-header----*/
 
+.header {
+    position: relative;
+    align-content: center;
+}
+
 .heading {
     text-align: center;
     font-size: 72px;
@@ -273,13 +278,15 @@ video::-webkit-media-controls {
 .button-container {
     position: absolute;
     display: flex;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
-    top: 400px;
-    left: 35%;
-    width: 30%;
-    align-self: center;
+    bottom: 5%;
+    width: 25%;
+    margin: auto;
     color: #FFF;
-    margin: 0px;
     text-align: center;
     z-index: 10000;
     text-align: center;
@@ -287,43 +294,6 @@ video::-webkit-media-controls {
 
 #logo {
     float: left;
-}
-
-#buttons_store {
-    float: left;
-    align-content: center;
-    vertical-align: middle;
-}
-
-.button-download {
-    color: #FFF;
-    float: left;
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    padding: 20px;
-    width: 35%;
-    font-size: 16px;
-    border: 2px solid white;
-    cursor: pointer;
-    align-content: center;
-    overflow: hidden;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.5);
-    outline: none;
-}
-
-.button-download:hover {
-    color: #FFF;
-    background-color: rgba(190, 100, 120, 0.5);
-    background-repeat: no-repeat;
-    padding: 20px;
-    width: 35%;
-    font-size: 16px;
-    float: left;
-    border: 2px solid white;
-    cursor: pointer;
-    overflow: hidden;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.5);
-    outline: none;
 }
 
 .button-ios {
@@ -644,6 +614,9 @@ video::-webkit-media-controls {
 /* Smartphones (portrait and landscape) ----------- */
 
 @media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 20px;
+    }
     .wrap {
         width: 100%
     }
