@@ -4,7 +4,10 @@
 <head>
     <title>Drink and Tell App</title>
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/animations.css" rel="stylesheet" type="text/css">
     <meta property="og:image" content="http://drinkandtellapp.com/images/logo.jpg">
     <meta property="og:url" content="http://drinkandtellapp.com/">
     <meta property="og:title" content="Download Drink and Tell App for the Ultimate Drinking Game for and Android and IOS">
@@ -54,6 +57,45 @@
         });
 
     </script>
+    <script>
+        // Trigger CSS animations on scroll.
+        // Detailed explanation can be found at http://www.bram.us/2013/11/20/scroll-animations/
+
+        // Looking for a version that also reverses the animation when
+        // elements scroll below the fold again?
+        // --> Check https://codepen.io/bramus/pen/vKpjNP
+
+        jQuery(function($) {
+
+            // Function which adds the 'animated' class to any '.animatable' in view
+            var doAnimations = function() {
+
+                // Calc current offset and get all animatables
+                var offset = $(window).scrollTop() + $(window).height(),
+                    $animatables = $('.animatable');
+
+                // Unbind scroll handler if we have no animatables
+                if ($animatables.size() == 0) {
+                    $(window).off('scroll', doAnimations);
+                }
+
+                // Check all animatables and animate them if necessary
+                $animatables.each(function(i) {
+                    var $animatable = $(this);
+                    if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+                        $animatable.removeClass('animatable').addClass('animated');
+                    }
+                });
+
+            };
+
+            // Hook doAnimations on scroll, and trigger a scroll
+            $(window).on('scroll', doAnimations);
+            $(window).trigger('scroll');
+
+        });
+
+    </script>
 </head>
 
 <body>
@@ -86,24 +128,24 @@
         <!---start-content==-->
         <div id="how-to-play">
             <div class="content">
-                <h1>HOW TO PLAY</h1>
+                <h1 class="block animatable bounceInLeft">HOW TO PLAY</h1>
                 <div class="screenshots">
                     <img src="images/screen1.png">
                     <p class="image-title">Step 1</p>
-                    <p>Choose one or multiple categories then select start game.</p>
+                    <p class="block animatable fadeIn">Choose one or multiple categories then select start game.</p>
                 </div>
                 <div class="screenshots">
                     <img src="images/screen2.png">
                     <p class="image-title">Step 2</p>
-                    <p>Read out the question & multiple choice answers before tapping your answer.</p>
+                    <p class="block animatable fadeIn">Read out the question & multiple choice answers before tapping your answer.</p>
                 </div>
                 <div class="screenshots">
                     <img src="images/screen3.png">
                     <p class="image-title">Step 3</p>
-                    <p>Each player says out loud,<br> which answer they think<br> you&#39;d pick.</p>
+                    <p class="block animatable fadeIn">Each player says out loud,<br> which answer they think<br> you&#39;d pick.</p>
                 </div>
                 <div class="clear"></div>
-                <h3>THOSE WHO GUESSED WRONG: DRINK!</h3>
+                <h3 class="block animatable bounceInLeft">THOSE WHO GUESSED WRONG: DRINK!</h3>
             </div>
         </div>
         <!---start-panels==-->
@@ -118,34 +160,34 @@
         <!---start-features==-->
         <div class="features-container">
             <div class="promo-head">
-                <h1>FEATURES</h1>
+                <h1 class="block animatable bounceInLeft">FEATURES</h1>
                 <div class="features">
-                    <h4>we speak your language</h4>
-                    <p>After high demand, we&#39;ve translated Drink and Tell into German, French and Portuguese, so players all around the world can enjoy our fun drinking game app.
+                    <h4 class="block animatable bounceInLeft">we speak your language</h4>
+                    <p class="block animatable bounceInLeft">After high demand, we&#39;ve translated Drink and Tell into German, French and Portuguese, so players all around the world can enjoy our fun drinking game app.
                     </p>
                 </div>
                 <div class="features">
-                    <h4>generating questions since 2015</h4>
-                    <p>Our team of writers have put on their drinking caps and are constantly generating new questions for you to play. Warning: Not for the faint hearted!</p>
+                    <h4 class="block animatable bounceInLeft">generating questions since 2015</h4>
+                    <p class="block animatable bounceInLeft">Our team of writers have put on their drinking caps and are constantly generating new questions for you to play. Warning: Not for the faint hearted!</p>
                 </div>
                 <div class="clear"></div>
                 <div class="features">
-                    <h4>Play with 1 friend or 100 at the same time</h4>
-                    <p>Regardless of whether you&#39;re drinking wine at dinner with your best mate or at a house party with 30 strangers, Drink and Tell is the ultimate party game.</p>
+                    <h4 class="block animatable bounceInLeft">Play with 1 friend or 100 at the same time</h4>
+                    <p class="block animatable bounceInLeft">Regardless of whether you&#39;re drinking wine at dinner with your best mate or at a house party with 30 strangers, Drink and Tell is the ultimate party game.</p>
                 </div>
                 <div class="features">
-                    <h4>unlimited number of categories (almost)</h4>
-                    <p>We&#39;re always adding new categories into our drinking game, which includes: love, sex, ethics, personality, life & death, adults only, relationships, would you rather, outrageous, pop culture, embarrassing and politics.</p>
+                    <h4 class="block animatable bounceInLeft">unlimited number of categories (almost)</h4>
+                    <p class="block animatable bounceInLeft">We&#39;re always adding new categories into our drinking game, which includes: love, sex, ethics, personality, life & death, adults only, relationships, would you rather, outrageous, pop culture, embarrassing and politics.</p>
                 </div>
                 <div class="clear"></div>
                 <div class="features">
-                    <h4>say goodbye to annoying ads
+                    <h4 class="block animatable bounceInLeft">say goodbye to annoying ads
                     </h4>
-                    <p>Get rid of those annoying ads by upgrading to the premium version of our party game. You&#39;ll also receive unlimited access to all our current and future card decks.</p>
+                    <p class="block animatable bounceInLeft">Get rid of those annoying ads by upgrading to the premium version of our party game. You&#39;ll also receive unlimited access to all our current and future card decks.</p>
                 </div>
                 <div class="features">
-                    <h4> Available on all your favourite devices: iPhone, iPad & Android</h4>
-                    <p>Whether you&#39;re an Apple or Android user, we don&#39;t discriminate. Drink and Tell is available for your iPhone, iPad and Android.
+                    <h4 class="block animatable bounceInLeft"> Available on all your favourite devices: iPhone, iPad & Android</h4>
+                    <p class="block animatable bounceInLeft">Whether you&#39;re an Apple or Android user, we don&#39;t discriminate. Drink and Tell is available for your iPhone, iPad and Android.
                     </p>
                 </div>
             </div>
@@ -154,20 +196,22 @@
         <!---//End-promo==-->
         <!---start-news-letter===-->
         <div class="kickstart">
-            <h1>Card game version</h1>
-            <div class="circle">
-                <div id="circle_contents">
-                    <h1 class="align_left">$20</h1>
-                    <p>Package contents:</p>
-                    <br>
-                    <ul style="list-style-type:disc">
-                        <li>200 question cards</li>
-                        <li>30 voting cards for up to 5 players</li>
-                    </ul>
+            <div style="float:left; width:100%;">
+                <h1 class="block animatable bounceInLeft">Card game version</h1>
+                <div class="circle">
+                    <div id="circle_contents" class="block animatable fadeIn">
+                        <h1 class="align_left">$20</h1>
+                        <p>Package contents:</p>
+                        <br>
+                        <ul style="list-style-type:disc">
+                            <li>200 question cards</li>
+                            <li>30 voting cards for up to 5 players</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div id="warning"></div>
-            <div id="kickstart_image">
+                <div id="warning"></div>
+                <div id="kickstart_image">
+                </div>
             </div>
             <input id="button_kickstart" class="button-dark" type="submit" value="Coming Soon">
         </div>
@@ -176,7 +220,7 @@
         <div class="stay-with">
             <div class="stay-with-head">
                 <div class="promo-head">
-                    <h1>Contact</h1>
+                    <h1 class="block animatable bounceInLeft">Contact</h1>
                     <br>
                     <p>If you have any questions related to PR or marketing, email us:
                         <br> support@drinkandtellapp.com

@@ -449,8 +449,7 @@ video::-webkit-media-controls {
 
 #button_kickstart {
     position: relative;
-    top: 500px;
-    right: 200px;
+    margin: 0 auto;
 }
 
 #kickstart_image {
