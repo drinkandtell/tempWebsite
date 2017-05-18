@@ -239,6 +239,8 @@ video::-webkit-media-controls {
 
 .header {
     position: relative;
+    float: left;
+    width: 100%;
     align-content: center;
 }
 
@@ -278,12 +280,11 @@ video::-webkit-media-controls {
 .button-container {
     position: absolute;
     display: flex;
-    left: 50%;
-    right: 0;
+    right: 20%;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
-    bottom: 5%;
+    bottom: 10%;
     width: 25%;
     color: #FFF;
     text-align: center;
@@ -321,20 +322,26 @@ video::-webkit-media-controls {
 #how-to-play {
     background: #60E5C6;
     width: 100%;
+    position: relative;
+    float: left;
+    text-align: center;
 }
 
 .content {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
-    padding: 20px;
-    text-align: center
+    text-align: center;
 }
 
 .screenshots {
     float: left;
-    width: 32%;
+    width: 27%;
     margin-top: 50px;
+    margin-left: 3%;
+    margin-right: 3%;
 }
+
+.phone-screenshot {}
 
 .image-title {
     color: #2B2123;
@@ -373,11 +380,11 @@ video::-webkit-media-controls {
 }
 
 .features {
-    padding: 1% 5%;
     width: 40%;
-    float: left;
     text-align: left;
     display: inline-block;
+    margin: 10px;
+    padding-bottom: 20px;
 }
 
 
@@ -386,16 +393,18 @@ video::-webkit-media-controls {
 .promo-head {
     text-align: center;
     margin: 10px auto;
-    width: 90%;
+    width: 80%;
     display: table;
+    position: relative;
 }
 
 .features-container {
     background: #D8D8D8;
     width: 100%;
+    position: relative;
+    float: left;
     text-align: center;
     display: table;
-    padding-bottom: 40px;
 }
 
 
@@ -404,21 +413,25 @@ video::-webkit-media-controls {
 
 /*---start-news-letter-header----*/
 
-.kickstart {
+.kickstart-large {
     margin: 0 auto;
     text-align: center;
     width: 100%;
-    height: 800px;
+}
+
+.kickstart-small {
+    display: none;
 }
 
 .circle {
-    width: 360px;
-    height: 540px;
     float: left;
     position: relative;
     background: url(../images/Party%20card%20game%20-%20oval.png);
     background-repeat: no-repeat;
     text-align: left;
+    background-size: cover;
+    width: 30vw;
+    height: 45.3vw;
 }
 
 .align_left {
@@ -445,11 +458,19 @@ video::-webkit-media-controls {
     height: 170px;
     position: relative;
     float: left;
+    background-size: contain;
 }
 
 #button_kickstart {
     position: relative;
-    margin: 0 auto;
+    width: 400px;
+    margin: 10px auto 10px auto;
+}
+
+.float-left {
+    position: relative;
+    float: left;
+    width: 100%;
 }
 
 #kickstart_image {
@@ -569,8 +590,9 @@ video::-webkit-media-controls {
 /*---start-stay-with-us-----*/
 
 .stay-with {
+    width: 100%;
+    float: left;
     position: relative;
-    padding-bottom: 50px;
     background: #60E5C6;
 }
 
@@ -609,6 +631,8 @@ video::-webkit-media-controls {
 }
 
 .footer {
+    position: relative;
+    float: left;
     height: 100px;
     line-height: 100px;
     text-align: center;
@@ -664,6 +688,68 @@ video::-webkit-media-controls {
     font-family: 'Avenir', sans-serif;
 }
 
+#mobile-only-image {
+    display: none;
+}
+
+#mobile-only-image {
+    display: block;
+    margin: 0px;
+    width: 100%;
+    height: 54vw;
+    background: url(../images/banner.png);
+    background-size: contain;
+}
+
+.button-container-mobile {
+    color: #FFF;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 35%;
+    margin: auto;
+    bottom: 5px;
+    text-align: center;
+}
+
+.button-container-mobile #logo {
+    float: left;
+    width: 50%;
+    height: 25vw;
+}
+
+.button-container-mobile .button-ios {
+    padding: 5px;
+    width: 100%;
+    height: 5vw;
+    border: none;
+    background: url(../images/apple.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.button-container-mobile .button-android {
+    padding: 5px;
+    background: url(../images/google.png);
+    border: none;
+    width: 100%;
+    height: 5vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#buttons_store {
+    width: 45%;
+    left: 5%;
+    height: 20sw;
+    top: 25%;
+    float: left;
+    position: relative;
+    margin: auto;
+}
+
 
 /*---//End-wrap-----*/
 
@@ -671,44 +757,120 @@ video::-webkit-media-controls {
 /*---start-responsive design----*/
 
 
-/* Smartphones (portrait and landscape) ----------- */
+/* Tablets (portrait and landscape) ----------- */
 
-@media only screen and (max-width: 500px) {
-    h1 {
-        font-size: 20px;
+@media only screen and (max-width: 1024px) {
+    body {
+        top: 0;
+    }
+    p {
+        font-size: 3.2em;
+    }
+    h4 {
+        font-size: 2em;
+    }
+    .header {
+        padding: 0px;
+    }
+    .video {
+        padding: 0px;
+        background-size: cover;
+        display: block;
     }
     .wrap {
         width: 100%
     }
     .content {
-        width: 100%;
+        position: relative;
+        width: 90%;
         margin: 0 auto;
-        padding: 20sp;
-        text-align: center
     }
     .features {
-        padding: 1% 5%;
         width: 90%;
         height: 100%;
         float: left;
     }
-    .button-download {
-        color: #FFF;
-        background-color: Transparent;
-        background-repeat: no-repeat;
-        padding: 12px;
-        width: 90%;
-        font-size: 15px;
-        border: 2px solid white;
-        cursor: pointer;
-        overflow: hidden;
-        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.5);
-        outline: none;
-    }
     .screenshots {
         float: left;
-        width: 32%;
-        margin-top: 20px;
+        width: 100%;
+    }
+    .phone-screenshot {
+        width: 30%;
+        float: left;
+    }
+    .phone-description {
+        font-size: 10px;
+        margin-right: 10%;
+        margin-left: 10%;
+        float: left;
+        width: 50%;
+    }
+    .kickstart-large {
+        display: none;
+    }
+    .kickstart-small {
+        position: relative;
+        float: left;
+        width: 100%;
+        display: block;
+    }
+    #kickstart_image-small {
+        background: none;
+        position: relative;
+        float: left;
+        width: 100%;
+    }
+    #kickstart_image-small img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        overflow: hidden;
+    }
+    .circle-small {
+        margin-top: 5%;
+        width: 60%;
+        height: 65.5vw;
+        float: left;
+        position: relative;
+        display: block;
+        background: url(../images/mobile_Party%20card%20game%20-%20green%20oval.png);
+        background-size: cover;
+    }
+    .circle-small p {
+        margin-left: 20px;
+        font-size: 1.1em;
+    }
+    .circle-small h1 {
+        font-size: 1.9em;
+        margin-left: 20px;
+        margin-bottom: 5px;
+        padding: 0px;
+    }
+    .circle-small ul {
+        margin-left: 15%;
+        margin-right: 20px;
+        list-style-type: disc;
+    }
+    #circle_contents-small {
+        transform: translate(5%, 40%);
+        margin-right: 10%;
+        height: 50%;
+        position: relative;
+        text-align: left;
+        color: #2B2123;
+        font-size: 2.5em;
+        font-family: 'Avenir', sans-serif;
+    }
+    #warning-small {
+        padding: 0px;
+        margin: 0px;
+        background: url(../images/warning.png) no-repeat;
+        width: 30%;
+        height: 20vw;
+        transform: translate(-55%, 50%);
+        position: relative;
+        float: left;
+        background-size: contain;
     }
     .image-title {
         font-family: 'DomusTitling-Bold', sans-serif;
@@ -717,13 +879,17 @@ video::-webkit-media-controls {
         color: #2B2123;
         margin-bottom: 10px
     }
-    .button-container {
-        color: #FFF;
-        margin-left: 5%;
-        margin-right: 5%;
-        text-align: center;
-        margin-bottom: 15px;
-        margin-top: 15px;
+    #logo {
+        width: 60%;
+        height: 60sw;
+    }
+    #button_kickstart-small {
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 20px;
+        width: 80%;
+        position: relative;
     }
     .heading {
         margin: auto 0;
@@ -760,10 +926,6 @@ video::-webkit-media-controls {
     .wrap input[type="button"] {
         -webkit-appearance: none
     }
-    .header {
-        width: 100%;
-        padding: 2em 0 0
-    }
     .news-letter {
         margin: 2em 0
     }
@@ -785,18 +947,17 @@ video::-webkit-media-controls {
         margin: 2em;
     }
     .button-dark {
-        padding: .7em 1.8em;
         text-align: center;
         text-transform: uppercase;
         border-radius: 60px;
         font-family: 'DomusTitling', sans-serif;
-        padding: 15px 50px 15px 50px;
+        padding: 10px 50px 10px 50px;
         margin: 0 auto;
         border: 1px solid black;
         margin-top: 10px;
         color: #fff;
         cursor: pointer;
-        font-size: 1.5em;
+        font-size: 1em;
         -webkit-transition: all .5s ease-in-out;
         -moz-transition: all .5s ease-in-out;
         -o-transition: all .5s ease-in-out;
@@ -805,7 +966,6 @@ video::-webkit-media-controls {
     }
     .button_light {
         background: transparent;
-        padding: .7em 1.8em;
         text-align: center;
         text-transform: uppercase;
         border-radius: 60px;
@@ -820,5 +980,158 @@ video::-webkit-media-controls {
         -moz-transition: all .5s ease-in-out;
         -o-transition: all .5s ease-in-out;
         transition: all .5s ease-in-out;
+    }
+    .form-container {
+        width: 80%;
+        margin: 0 auto
+    }
+    #button_submit {
+        padding: 0px;
+        width: 50%;
+        margin-bottom: 20px;
+        margin-right: 0px;
+        float: right;
+    }
+    .press-kit {
+        align-content: center;
+        text-align: center;
+        margin: 20px;
+    }
+    .footer {
+        position: relative;
+        float: left;
+        height: 60px;
+        line-height: 50px;
+        text-align: center;
+        width: 100%;
+        background: #2B2123;
+        display: flex;
+        align-items: center;
+    }
+    .stay-with {
+        float: left;
+        position: relative;
+        background: #60E5C6;
+    }
+    .footer-left {
+        float: none;
+        text-align: center
+    }
+    .footer-right {
+        float: none;
+        text-align: center
+    }
+    #social {
+        float: left;
+        display: flex;
+        height: 30px;
+        width: 45%;
+        margin: auto 0px;
+        margin-left: 20px;
+        position: relative;
+        /* establish flex container */
+    }
+    #copyright {
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+        float: right;
+        color: white;
+        height: 40px;
+        width: 60%;
+        right: 20px;
+        margin-left: 10px;
+        font-size: 8px;
+        font-family: 'Avenir', sans-serif;
+    }
+    .social-button {
+        position: relative;
+        /* to specify dimensions explicitly */
+        float: left;
+        border: none;
+        margin-left: 5px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        margin: auto 5px;
+    }
+    #first-screenshot {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    p {
+        font-size: 19px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    #circle_contents-small {
+        transform: translate(10%, 40%);
+        margin: 0 auto;
+        position: relative;
+        text-align: left;
+        color: #2B2123;
+        margin-right: 10%;
+        font-size: 20px;
+        font-family: 'Avenir', sans-serif;
+    }
+    .circle-small p {
+        margin-left: 20px;
+        font-size: 21px;
+    }
+    .circle-small h1 {
+        font-size: 30px;
+        margin-left: 20px;
+        margin-bottom: 5px;
+        padding: 0px;
+    }
+    .circle-small ul {
+        margin-left: 45px;
+        margin-right: 20px;
+        list-style-type: disc;
+    }
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (max-width: 500px) {
+    p {
+        font-size: 19px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    #circle_contents-small {
+        transform: translate(5%, 20%);
+        margin: 0 auto;
+        position: relative;
+        text-align: left;
+        color: #2B2123;
+        font-size: 14px;
+        font-family: 'Avenir', sans-serif;
+    }
+    .circle-small p {
+        margin-left: 20px;
+        font-size: 15px;
+    }
+    .circle-small h1 {
+        font-size: 25px;
+        margin-left: 20px;
+        margin-bottom: 5px;
+        padding: 0px;
+    }
+    .circle-small ul {
+        margin-left: 45px;
+        margin-right: 20px;
+        list-style-type: disc;
     }
 }

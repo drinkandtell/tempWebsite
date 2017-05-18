@@ -18,7 +18,7 @@
     <meta content="Discover the new drinking game app craze, Drink and Tell. Answer taboo questions and find out how well your friends really know you, all while you drink!
          " name="description">
     <meta content="drink and tell app android ios drinking game iphone play fun questions friends drink love personality ethics questions play store ios iphone" name="Keywords">
-    <link href="images/fav-icon.jpg" rel="shortcut icon" type="image/x-icon">
+    <link href="images/fav-icon.png" rel="shortcut icon" type="image/x-icon">
 
     <!--==tracking==-->
     <script>
@@ -39,25 +39,41 @@
 
     </script>
     <script>
+        function isMobile() {
+            try {
+                document.createEvent("TouchEvent");
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
         $(document).ready(function() {
+            if (!isMobile()) {
+                $("#mobile-only-image").hide();
+                var figure = $(".video").hover(hoverVideo, hideVideo);
 
-            var figure = $(".video").hover(hoverVideo, hideVideo);
+                function hoverVideo(e) {
+                    $('video', this).get(0).play();
+                }
 
-            function hoverVideo(e) {
-                $('video', this).get(0).play();
-            }
-
-            function hideVideo(e) {
+                function hideVideo(e) {
+                    $('video', this).get(0).pause();
+                }
+            } else {
                 $('video', this).get(0).pause();
-            }
+                $("video").hide();
+                $("#mobile-only-image").show();
+                $("#buttons-top").toggleClass('button-container button-container-mobile');
 
+            }
         });
         $(document).on('hide.visibility', function() {
-            $('video', this).get(0).pause();
+            if (screen.width >= 500) {
+                $('video', this).get(0).pause();
+            }
         });
 
-    </script>
-    <script>
+
         // Trigger CSS animations on scroll.
         // Detailed explanation can be found at http://www.bram.us/2013/11/20/scroll-animations/
 
@@ -106,21 +122,15 @@
             <div class="video">
                 <video class="thevideo" loop preload="none" width="100%">
                   <source src="video.mov" type="video/mp4">
-                <img src="images/banner.png" title="">
-
+                  <img src="images/banner.png" title="">
                </video>
-                <div class="button-container">
+                <div id="mobile-only-image"></div>
+                <div id="buttons-top" class="button-container">
                     <img id="logo" src="images/Logo.png" />
-                    <div id="buttons_store">
+                    <div id="buttons_store" class="buttons-store">
                         <button class="button-ios" onclick="location.href='https://itunes.apple.com/us/app/drink-and-tell/id977435351?ls=1&mt=8';"></button>
                         <button class="button-android" onclick="location.href='https://play.google.com/store/apps/details?id=com.blackmarket.drinkandtell';"></button>
                     </div>
-                    <!--
-                     <div class="button-container">
-                         <a href="https://www.facebook.com/drinkandtellapp?fref=ts"><img src="images/facebook42.png"></img>
-                         </a>
-                     </div>
-                     -->
                 </div>
             </div>
         </div>
@@ -129,20 +139,26 @@
         <div id="how-to-play">
             <div class="content">
                 <h1 class="block animatable bounceInLeft">HOW TO PLAY</h1>
-                <div class="screenshots">
-                    <img src="images/screen1.png">
-                    <p class="image-title">Step 1</p>
-                    <p class="block animatable fadeIn">Choose one or multiple categories then select start game.</p>
+                <div id="first-screenshot" class="screenshots">
+                    <img class="phone-screenshot" src="images/screen1.png">
+                    <div class="phone-description">
+                        <p class="image-title">Step 1</p>
+                        <p class="block animatable fadeIn">Choose one or multiple categories then select start game.</p>
+                    </div>
                 </div>
                 <div class="screenshots">
-                    <img src="images/screen2.png">
-                    <p class="image-title">Step 2</p>
-                    <p class="block animatable fadeIn">Read out the question & multiple choice answers before tapping your answer.</p>
+                    <img class="phone-screenshot" src="images/screen2.png">
+                    <div class="phone-description">
+                        <p class="image-title">Step 2</p>
+                        <p class="block animatable fadeIn">Read out the question & multiple choice answers before tapping your answer.</p>
+                    </div>
                 </div>
                 <div class="screenshots">
-                    <img src="images/screen3.png">
-                    <p class="image-title">Step 3</p>
-                    <p class="block animatable fadeIn">Each player says out loud,<br> which answer they think<br> you&#39;d pick.</p>
+                    <img class="phone-screenshot" src="images/screen3.png">
+                    <div class="phone-description">
+                        <p class="image-title">Step 3</p>
+                        <p class="block animatable fadeIn">Each player says out loud,<br> which answer they think<br> you&#39;d pick.</p>
+                    </div>
                 </div>
                 <div class="clear"></div>
                 <h3 class="block animatable bounceInLeft">THOSE WHO GUESSED WRONG: DRINK!</h3>
@@ -170,33 +186,55 @@
                     <h4 class="block animatable bounceInLeft">generating questions since 2015</h4>
                     <p class="block animatable bounceInLeft">Our team of writers have put on their drinking caps and are constantly generating new questions for you to play. Warning: Not for the faint hearted!</p>
                 </div>
-                <div class="clear"></div>
                 <div class="features">
                     <h4 class="block animatable bounceInLeft">Play with 1 friend or 100 at the same time</h4>
                     <p class="block animatable bounceInLeft">Regardless of whether you&#39;re drinking wine at dinner with your best mate or at a house party with 30 strangers, Drink and Tell is the ultimate party game.</p>
                 </div>
                 <div class="features">
                     <h4 class="block animatable bounceInLeft">unlimited number of categories (almost)</h4>
-                    <p class="block animatable bounceInLeft">We&#39;re always adding new categories into our drinking game, which includes: love, sex, ethics, personality, life & death, adults only, relationships, would you rather, outrageous, pop culture, embarrassing and politics.</p>
+                    <p class="block animatable bounceInLeft">We&#39;re always adding new categories into our drinking game, which includes: love, sex, ethics, personality, life &amp; death, adults only, relationships, would you rather, outrageous, pop culture, embarrassing and politics.</p>
                 </div>
-                <div class="clear"></div>
                 <div class="features">
                     <h4 class="block animatable bounceInLeft">say goodbye to annoying ads
                     </h4>
                     <p class="block animatable bounceInLeft">Get rid of those annoying ads by upgrading to the premium version of our party game. You&#39;ll also receive unlimited access to all our current and future card decks.</p>
                 </div>
                 <div class="features">
-                    <h4 class="block animatable bounceInLeft"> Available on all your favourite devices: iPhone, iPad & Android</h4>
+                    <h4 class="block animatable bounceInLeft"> Available on all your favourite devices: iPhone, iPad &amp; Android</h4>
                     <p class="block animatable bounceInLeft">Whether you&#39;re an Apple or Android user, we don&#39;t discriminate. Drink and Tell is available for your iPhone, iPad and Android.
                     </p>
                 </div>
             </div>
             <div class="clear"></div>
         </div>
+
         <!---//End-promo==-->
         <!---start-news-letter===-->
-        <div class="kickstart">
-            <div style="float:left; width:100%;">
+        <div class="kickstart-small">
+            <div>
+                <h1 class="block animatable bounceInLeft">Card game version</h1>
+                <div id="kickstart_image-small">
+                    <img src="images/DrinkAndTell_Mockup-card%20game.png" /> </div>
+                <div class="clear"></div>
+
+                <div class="circle-small">
+                    <div id="circle_contents-small" class="block animatable fadeIn">
+                        <h1 class="align_left">$20</h1>
+                        <p>Package contents:</p>
+                        <br>
+                        <ul style="list-style-type:disc;">
+                            <li>200 question cards</li>
+                            <li>30 voting cards for up to 5 players</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="warning-small"></div>
+            </div>
+            <input id="button_kickstart-small" class="button-dark" type="submit" value="Coming Soon">
+        </div>
+
+        <div class="kickstart-large">
+            <div class="float-left">
                 <h1 class="block animatable bounceInLeft">Card game version</h1>
                 <div class="circle">
                     <div id="circle_contents" class="block animatable fadeIn">
@@ -215,44 +253,47 @@
             </div>
             <input id="button_kickstart" class="button-dark" type="submit" value="Coming Soon">
         </div>
-        <!---//End-news-letter===-->
-        <!---start-stay-with===-->
-        <div class="stay-with">
-            <div class="stay-with-head">
-                <div class="promo-head">
-                    <h1 class="block animatable bounceInLeft">Contact</h1>
-                    <br>
-                    <p>If you have any questions related to PR or marketing, email us:
-                        <br> support@drinkandtellapp.com
-                    </p>
-                    <br>
-                </div>
-            </div>
-            <div class="form-container">
-                <form action="MAILTO:the.black.market.apps@gmail.com" class="form" enctype="text/plain" method="post">
-                    <input class="text-box-dark" id="address" name="email" onblur="if (this.value == '') {this.value = 'Email';}" onfocus="this.value = '';" type="text" value="Email address*">
-                    <br>
-                    <input class="text-box-dark" id="submission" name="submission" onblur="if (this.value == '') {this.value = 'Write your message here*';}" onfocus="this.value = '';" type="text" value="Write your message here*">
-                    <input id="button_submit" class="button_light" type="submit" value="Submit">
-                </form>
-            </div>
-            <div class="press-kit"><a href="https://drive.google.com/folderview?id=0B5TTByFEvRdYflczVHE2YnZRNWdPSmxONFJZcDAtb1prczdicVJjSEFfd2N5YVpIblp5TUU&usp=sharing" class="button-dark">Download Press Kit</a>
-            </div>
-        </div>
-        <!---End-stay-with===-->
-        <!---start-footer===-->
-
-        <div class="footer">
-            <div id="social">
-                <button id="button-fb" class="social-button" onclick="location.href='https://www.facebook.com/drinkandtellapp/';"></button>
-                <button id="button-insta" class="social-button" onclick="location.href='https://www.facebook.com/drinkandtellapp/';"></button>
-                <button id="button-youtube" class="social-button" onclick="location.href='https://youtu.be/u_Axh5LjhsA';"></button>
-            </div>
-            <span id="copyright">2017 DRINK AND TELL &#169;. ALL RIGHTS RESERVED.</span>
-        </div>
-
-        <!---//End-footer===-->
     </div>
+    <!---//End-news-letter===-->
+    <!---start-stay-with===-->
+    <div class="stay-with">
+        <div class="stay-with-head">
+            <div class="promo-head">
+                <h1 class="block animatable bounceInLeft">Contact</h1>
+                <br>
+                <p>If you have any questions related to PR or marketing, email us:
+                    <br> support@drinkandtellapp.com
+                </p>
+                <br>
+            </div>
+        </div>
+        <div class="form-container">
+            <form action="MAILTO:the.black.market.apps@gmail.com" class="form" enctype="text/plain" method="post">
+                <input class="text-box-dark" id="address" name="email" onblur="if (this.value == '') {this.value = 'Email';}" onfocus="this.value = '';" type="text" value="Email address*">
+                <br>
+                <input class="text-box-dark" id="submission" name="submission" onblur="if (this.value == '') {this.value = 'Write your message here*';}" onfocus="this.value = '';" type="text" value="Write your message here*">
+                <input id="button_submit" class="button_light" type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="press-kit"><a href="https://drive.google.com/folderview?id=0B5TTByFEvRdYflczVHE2YnZRNWdPSmxONFJZcDAtb1prczdicVJjSEFfd2N5YVpIblp5TUU&usp=sharing" class="button-dark">Download Press Kit</a>
+
+        </div>
+        <div class="clear"></div>
+
+    </div>
+    <!---End-stay-with===-->
+    <!---start-footer===-->
+
+    <div class="footer">
+        <div id="social">
+            <button id="button-fb" class="social-button" onclick="location.href='https://www.facebook.com/drinkandtellapp/';"></button>
+            <button id="button-insta" class="social-button" onclick="location.href='https://www.facebook.com/drinkandtellapp/';"></button>
+            <button id="button-youtube" class="social-button" onclick="location.href='https://youtu.be/u_Axh5LjhsA';"></button>
+        </div>
+        <span id="copyright">2017 DRINK AND TELL &#169;. ALL RIGHTS RESERVED.</span>
+    </div>
+
+    <!---//End-footer===-->
     <!---End-content==-->
     <!--- //End-wrap==-->
 </body>
