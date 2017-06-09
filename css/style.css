@@ -384,6 +384,7 @@ video::-webkit-media-controls {
 .features {
     width: 40%;
     text-align: left;
+    vertical-align: top;
     display: inline-block;
     margin: 10px;
     padding-bottom: 20px;
@@ -824,6 +825,9 @@ video::-webkit-media-controls {
         width: 100%;
         display: block;
     }
+    .kickstart-small h1 {
+        margin-top: 10px;
+    }
     #kickstart_image-small {
         background: none;
         position: relative;
@@ -877,9 +881,9 @@ video::-webkit-media-controls {
         padding: 0px;
         margin: 0px;
         background: url(../images/warning.png) no-repeat;
-        width: 30%;
-        height: 20vw;
-        transform: translate(-55%, 50%);
+        width: 35%;
+        height: 30vw;
+        transform: translate(-40%, 30%);
         position: relative;
         float: left;
         background-size: contain;
@@ -922,6 +926,9 @@ video::-webkit-media-controls {
         letter-spacing: 3px;
         font-family: 'Open Sans', sans-serif;
         text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3)
+    }
+    .stay-with-head h1 {
+        margin: 0px;
     }
     .heading-submit {
         margin: auto 0;
