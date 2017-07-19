@@ -50,6 +50,8 @@
         $(document).ready(function() {
             if (!isMobile()) {
                 $("#mobile-only-image").hide();
+                $("#logo").hide();
+
                 var figure = $(".video").hover(hoverVideo, hideVideo);
 
                 function hoverVideo(e) {
@@ -62,6 +64,8 @@
             } else {
                 $('video', this).get(0).pause();
                 $("video").hide();
+                $("#logo").show();
+
                 $("#mobile-only-image").show();
                 $("#buttons-top").toggleClass('button-container button-container-mobile');
 
